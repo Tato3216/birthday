@@ -18,6 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentIndex = 0;
   let isPlaying = false;
 
+  if (bgMusic) {
+    bgMusic.volume = 0.4;
+  }
+
   function showScreen(index) {
     screens.forEach((screen) => {
       screen.classList.remove("active");
