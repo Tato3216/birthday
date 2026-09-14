@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Para mis ojitos bonitos</title>
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" 
+    rel="stylesheet"
+  >
+</head>
+
+<body>
+
+  <div class="background-glow"></div>
+
+  <main class="app">
+
+    <!-- Pantalla 1 -->
+    <section class="screen active">
+      <div class="screen-card intro-card">
+        <p class="label">Tengo algo para ti</p>
+
+        <h1>Para mis ojitos bonitos</h1>
+
+        <p class="main-text">
+          No quería que tu día pasara como cualquier otro.
+        </p>
+
+        <button class="main-btn next-btn" type="button">
+          Abrir mi detalle
+        </button>
+      </div>
+    </section>
+
+    <!-- Pantalla 2 -->
+    <section class="screen">
+      <div class="screen-card">
+        <p class="label">Antes de seguir</p>
+
+        <h2>Dale play</h2>
+
+        <p class="main-text">
+          Porque si algo tenía que estar presente en esto, era la música.
+        </p>
+
+        <div class="player">
+          <button id="playPauseBtn" type="button">▶</button>
+          <span id="musicText">Presiona para reproducir</span>
+        </div>
+
+        <audio id="bgMusic" loop>
+          <source src="assets/song.mp3" type="audio/mpeg">
+        </audio>
+
+        <button class="arrow-next next-btn" type="button" aria-label="Continuar">
+          ↓
+        </button>
+      </div>
+    </section>
+
+    <!-- Pantalla 3 -->
+    <section class="screen">
+      <div class="screen-card">
+        <p class="label">Feliz cumpleaños</p>
+
+        <h2>Hoy se celebra a alguien especial</h2>
+
+        <p class="main-text">
+          Hoy quería desearte un feliz cumpleaños de una forma distinta.
+          Espero que este nuevo año venga cargado de paz, alegrías,
+          oportunidades bonitas y muchas razones para sonreír.
+        </p>
+
+        <p class="main-text">
+          Que la vida te trate bonito, que tus metas sigan creciendo
+          y que nunca olvides lo valiosa que eres.
+        </p>
+
+        <button class="arrow-next next-btn" type="button" aria-label="Continuar">
+          ↓
+        </button>
+      </div>
+    </section>
+
+    <!-- Pantalla 4 -->
+    <section class="screen">
+      <div class="screen-card">
+        <p class="label">Toca cada tarjeta</p>
+
+        <h2>Unas cosas para ti</h2>
+
+        <div class="cards-grid">
+          <button class="mini-card" type="button" data-message="Me gusta esa forma tuya de hacerte presente, incluso cuando dices poquito.">
+            <span>01</span>
+            <strong>Algo que me gusta de ti</strong>
+            <small>Tócame</small>
+          </button>
+
+          <button class="mini-card" type="button" data-message="Deseo que este año te traiga tranquilidad, salud, amor bonito, éxito y momentos que te hagan sentir orgullosa de ti.">
+            <span>02</span>
+            <strong>Algo que deseo para ti</strong>
+            <small>Tócame</small>
+          </button>
+
+          <button class="mini-card" type="button" data-message="A veces eres complicada, sí… pero también tienes algo que hace que uno quiera quedarse descubriéndote.">
+            <span>03</span>
+            <strong>Algo que pienso de ti</strong>
+            <small>Tócame</small>
+          </button>
+
+          <button class="mini-card" type="button" data-message="Que no se te olvide sonreír. Hay sonrisas que deberían aparecer más seguido. La tuya es una de esas.">
+            <span>04</span>
+            <strong>Algo que no debes olvidar</strong>
+            <small>Tócame</small>
+          </button>
+        </div>
+
+        <button class="arrow-next next-btn" type="button" aria-label="Continuar">
+          ↓
+        </button>
+      </div>
+    </section>
+
+    <!-- Pantalla 5 -->
+    <section class="screen">
+      <div class="screen-card beauty-card">
+        <p class="label">Lo que me gusta de ti</p>
+
+        <h2>Hay algo en ti</h2>
+
+        <p class="main-text">
+          Me gustan tus ojos, tu sonrisa y esa forma tuya de hacerte presente incluso cuando dices poco.
+        </p>
+
+        <p class="main-text">
+          Tienes una mezcla que me gusta demasiado: ternura, carácter, misterio y una belleza que no necesita hacer ruido.
+        </p>
+
+        <p class="main-text">
+          Eres linda como esas canciones que empiezan suave y terminan quedándose en la mente todo el día.
+        </p>
+
+        <p class="main-text special-text">
+          Y quizá eso es lo que más me gusta de ti: que no solo eres bonita, también tienes algo que se siente.
+        </p>
+
+        <button class="arrow-next next-btn" type="button" aria-label="Continuar">
+          ↓
+        </button>
+      </div>
+    </section>
+
+    <!-- Pantalla 6 -->
+    <section class="screen">
+      <div class="screen-card">
+        <p class="label">Pequeña advertencia</p>
+
+        <h2>Reglas de tu día</h2>
+
+        <div class="rules">
+          <p>Sonreír más de la cuenta.</p>
+          <p>Dejarte consentir.</p>
+          <p>Disfrutar sin culpa.</p>
+          <p>Verte demasiado bonita, aunque eso ya lo haces sin esfuerzo.</p>
+        </div>
+
+        <p class="main-text special-text">
+          Y sí, hoy tienes permiso de estar más bonita de lo normal...
+          pero no abuses, que después uno queda pensando en ti.
+        </p>
+
+        <button class="arrow-next next-btn" type="button" aria-label="Continuar">
+          ↓
+        </button>
+      </div>
+    </section>
+
+    <!-- Pantalla 7 -->
+    <section class="screen">
+      <div class="screen-card">
+        <p class="label">Momentos</p>
+
+        <h2>Cosas que guardo</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <span>01</span>
+            <p>Cuando dijiste que conmigo te sentías tranquila.</p>
+          </div>
+
+          <div class="timeline-item">
+            <span>02</span>
+            <p>Cuando me hiciste reír con tus ocurrencias.</p>
+          </div>
+
+          <div class="timeline-item">
+            <span>03</span>
+            <p>Cuando admitiste que eres celosa y complicada, como si eso no se notara.</p>
+          </div>
+
+          <div class="timeline-item">
+            <span>04</span>
+            <p>Cuando simplemente apareces y cambia un poquito el día.</p>
+          </div>
+        </div>
+
+        <button class="arrow-next next-btn" type="button" aria-label="Continuar">
+          ↓
+        </button>
+      </div>
+    </section>
+
+    <!-- Pantalla 8 -->
+    <section class="screen">
+      <div class="screen-card">
+        <p class="label">No hagas esto</p>
+
+        <h2>Hay un botón que no deberías presionar</h2>
+
+        <button id="surpriseBtn" class="secondary-btn" type="button">
+          No presionar
+        </button>
+
+        <p id="surpriseText" class="main-text surprise-text hidden">
+          Te dije que no lo presionaras... pero sabía que lo harías.
+          Curiosa como siempre. Por eso me gustas.
+        </p>
+
+        <button class="arrow-next next-btn" type="button" aria-label="Continuar">
+          ↓
+        </button>
+      </div>
+    </section>
+
+    <!-- Pantalla 9 -->
+    <section class="screen">
+      <div class="screen-card">
+        <p class="label">Antes de terminar</p>
+
+        <h2>Esto quería decírtelo yo</h2>
+
+        <p class="main-text">
+          Hay cosas que se leen bonito, pero se sienten mejor cuando alguien las dice.
+        </p>
+
+        <div class="video-container">
+          <video controls>
+            <source src="assets/video.mp4" type="video/mp4">
+            Tu navegador no soporta video.
+          </video>
+        </div>
+
+        <button class="arrow-next next-btn" type="button" aria-label="Continuar">
+          ↓
+        </button>
+      </div>
+    </section>
+
+    <!-- Pantalla 10 -->
+    <section class="screen">
+      <div class="screen-card final-card">
+        <p class="label">Para cerrar</p>
+
+        <h2>Feliz cumpleaños, mi niña</h2>
+
+        <p class="main-text">
+          Espero que este día te recuerde lo mucho que vales.
+          Que recibas cariño bonito, momentos tranquilos y razones para sonreír.
+        </p>
+
+        <p class="main-text">
+          Este detalle no es perfecto, pero está hecho con intención.
+          Y a veces eso vale más que cualquier cosa comprada de prisa.
+        </p>
+
+        <h3>Feliz cumpleaños, ojitos bonitos.</h3>
+
+        <p class="signature">
+          De alguien que no quería dejar pasar tu día como si fuera cualquier día.
+        </p>
+
+        <button class="arrow-next next-btn restart-btn" type="button" aria-label="Volver al inicio">
+          ↺
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Flecha para regresar -->
+  <button id="backArrow" class="back-arrow hidden" type="button" aria-label="Regresar">
+    ←
+  </button>
+
+  <!-- Modal de tarjetas -->
+  <div id="messageModal" class="modal hidden">
+    <div class="modal-content">
+      <button id="closeModal" class="close-btn" type="button">×</button>
+      <p id="modalText"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
