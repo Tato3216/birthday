@@ -15,8 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const surpriseBtn = document.getElementById("surpriseBtn");
   const surpriseText = document.getElementById("surpriseText");
 
+  const letterBtn = document.getElementById("letterBtn");
+  const letterText = document.getElementById("letterText");
+
   let currentIndex = 0;
   let isPlaying = false;
+
+  if (bgMusic) {
+    bgMusic.volume = 0.9;
+  }
 
   function showScreen(index) {
     screens.forEach((screen) => {
@@ -127,6 +134,13 @@ document.addEventListener("DOMContentLoaded", () => {
     surpriseBtn.addEventListener("click", () => {
       surpriseText.classList.remove("hidden");
       surpriseBtn.textContent = "Ya sabía que lo harías";
+    });
+  }
+
+  if (letterBtn && letterText) {
+    letterBtn.addEventListener("click", () => {
+      letterText.classList.remove("hidden");
+      letterBtn.textContent = "Mensaje abierto";
     });
   }
 

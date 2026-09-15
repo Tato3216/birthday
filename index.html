@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Para mis ojitos bonitos</title>
+  <title>Para mis Teresita</title>
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
@@ -28,7 +28,7 @@
       <div class="screen-card intro-card">
         <p class="label">Tengo algo para ti</p>
 
-        <h1>Para mis ojitos bonitos</h1>
+        <h1>Para la de ojitos bonitos</h1>
 
         <p class="main-text">
           No quería que tu día pasara como cualquier otro.
@@ -45,7 +45,7 @@
       <div class="screen-card">
         <p class="label">Antes de seguir</p>
 
-        <h2>Dale play</h2>
+        <h2>DALE PLAY</h2>
 
         <p class="main-text">
           Porque si algo tenía que estar presente en esto, era la música.
@@ -69,7 +69,7 @@
     <!-- Pantalla 3 -->
     <section class="screen">
       <div class="screen-card">
-        <p class="label">Feliz cumpleaños</p>
+        <p class="label">Feliz cumpleaños hermosa</p>
 
         <h2>Hoy se celebra a alguien especial</h2>
 
@@ -130,7 +130,7 @@
     </section>
 
     <!-- Pantalla 5 -->
-    <section class="screen">
+    <!-- <section class="screen">
       <div class="screen-card beauty-card">
         <p class="label">Lo que me gusta de ti</p>
 
@@ -156,7 +156,7 @@
           ↓
         </button>
       </div>
-    </section>
+    </section> -->
 
     <!-- Pantalla 6 -->
     <section class="screen">
@@ -166,8 +166,8 @@
         <h2>Reglas de tu día</h2>
 
         <div class="rules">
-          <p>Sonreír más de la cuenta.</p>
-          <p>Dejarte consentir.</p>
+          <p>Sonreír más de la cuenta. Aunque seas brava jaja</p>
+          <p>Dejarte consentir obvio solo por mi.</p>
           <p>Disfrutar sin culpa.</p>
           <p>Verte demasiado bonita, aunque eso ya lo haces sin esfuerzo.</p>
         </div>
@@ -242,23 +242,39 @@
 
     <!-- Pantalla 9 -->
     <section class="screen">
-      <div class="screen-card">
+      <div class="screen-card letter-card">
         <p class="label">Antes de terminar</p>
 
-        <h2>Esto quería decírtelo yo</h2>
+        <h2>Un mensaje guardado para ti</h2>
 
         <p class="main-text">
-          Hay cosas que se leen bonito, pero se sienten mejor cuando alguien las dice.
+          Hay cosas que no quería dejar escritas desde el inicio.
+          Algunas se sienten mejor cuando aparecen en el momento correcto.
         </p>
 
-        <div class="video-container">
-          <video controls>
-            <source src="assets/video.mp4" type="video/mp4">
-            Tu navegador no soporta video.
-          </video>
+        <button id="letterBtn" class="secondary-btn" type="button">
+          Leer mensaje
+        </button>
+
+        <div id="letterText" class="hidden letter-box">
+          <p>
+            Teresita, espero que este cumpleaños te recuerde lo especial que eres.
+            Me gusta tu forma de ser, tus ojitos, tu sonrisa, tu carácter y hasta
+            esa manera tuya de complicar un poquito las cosas.
+          </p>
+
+          <p>
+            No sé exactamente qué lugar tenga yo en este nuevo año de tu vida,
+            pero sí quería estar presente de una forma bonita, distinta y sincera.
+          </p>
+
+          <p>
+            Que nunca te falten razones para sonreír, canciones que te alegren
+            el día y personas que te quieran bonito.
+          </p>
         </div>
 
-        <button class="arrow-next next-btn" type="button" aria-label="Continuar">
+        <!-- <button class="arrow-next next-btn" type="button" aria-label="Continuar"> -->
           ↓
         </button>
       </div>
@@ -269,7 +285,7 @@
       <div class="screen-card final-card">
         <p class="label">Para cerrar</p>
 
-        <h2>Feliz cumpleaños, mi niña</h2>
+        <h2>Feliz cumpleaños, mi niña hermosa</h2>
 
         <p class="main-text">
           Espero que este día te recuerde lo mucho que vales.
@@ -295,12 +311,10 @@
 
   </main>
 
-  <!-- Flecha para regresar -->
   <button id="backArrow" class="back-arrow hidden" type="button" aria-label="Regresar">
     ←
   </button>
 
-  <!-- Modal de tarjetas -->
   <div id="messageModal" class="modal hidden">
     <div class="modal-content">
       <button id="closeModal" class="close-btn" type="button">×</button>

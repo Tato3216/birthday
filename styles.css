@@ -324,9 +324,11 @@ h3 {
 
 .mini-card small {
   color: var(--accent-2);
+  font-size: 1rem;
+  font-weight: 600;
 }
 
-/* Pantalla belleza */
+/* Belleza */
 
 .beauty-card {
   position: relative;
@@ -401,21 +403,40 @@ h3 {
   margin-top: 30px;
 }
 
-/* Video */
+/* Carta */
 
-.video-container {
-  max-width: 760px;
-  margin: 35px auto 0;
-  border-radius: 24px;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid var(--border);
-  box-shadow: 0 25px 80px var(--shadow);
+.letter-card {
+  position: relative;
 }
 
-.video-container video {
-  width: 100%;
-  display: block;
+.letter-card::before {
+  content: "✦";
+  position: absolute;
+  top: 18px;
+  right: 28px;
+  font-size: 2.6rem;
+  color: rgba(200, 182, 226, 0.26);
+}
+
+.letter-box {
+  max-width: 720px;
+  margin: 30px auto 0;
+  padding: 26px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--border);
+  text-align: left;
+  animation: fadeScreen 0.45s ease forwards;
+}
+
+.letter-box p {
+  color: var(--text-soft);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.letter-box p:last-child {
+  margin-bottom: 0;
 }
 
 /* Modal */
