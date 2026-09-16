@@ -195,12 +195,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (gameHint) {
       gameHint.classList.remove("hidden");
-      gameHint.textContent = "Presiona iniciar para jugar";
+      gameHint.textContent = "Presiona START para jugar";
     }
 
     if (startGameBtn) {
       startGameBtn.classList.remove("hidden");
-      startGameBtn.textContent = "Iniciar juego";
+      startGameBtn.textContent = "START";
     }
   }
 
@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     starTimer = setInterval(() => {
       createStar();
-    }, 900);
+    }, 850);
   }
 
   function createStar() {
@@ -249,8 +249,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const areaWidth = gameArea.clientWidth;
     const areaHeight = gameArea.clientHeight;
 
-    const maxX = areaWidth - 50;
-    const maxY = areaHeight - 50;
+    const maxX = areaWidth - 56;
+    const maxY = areaHeight - 56;
 
     const randomX = Math.max(8, Math.floor(Math.random() * maxX));
     const randomY = Math.max(8, Math.floor(Math.random() * maxY));
@@ -280,7 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (star && star.parentElement) {
         star.remove();
       }
-    }, 1300);
+    }, 1250);
   }
 
   function endGame(won) {
@@ -299,9 +299,9 @@ document.addEventListener("DOMContentLoaded", () => {
       gameResult.classList.remove("hidden");
 
       if (won) {
-        gameResult.textContent = "Ganaste. Ahora sí desbloqueaste el mensaje guardado.";
+        gameResult.textContent = "Nivel completado. Mensaje desbloqueado.";
       } else {
-        gameResult.textContent = "Se acabó el tiempo. Inténtalo otra vez, señorita.";
+        gameResult.textContent = "Game over. Inténtalo otra vez, señorita.";
       }
     }
 
@@ -309,9 +309,9 @@ document.addEventListener("DOMContentLoaded", () => {
       gameHint.classList.remove("hidden");
 
       if (won) {
-        gameHint.textContent = "Reto completado ✨";
+        gameHint.textContent = "LEVEL COMPLETE ✨";
       } else {
-        gameHint.textContent = "Casi... vuelve a intentarlo";
+        gameHint.textContent = "GAME OVER";
       }
     }
 
@@ -326,7 +326,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       if (startGameBtn) {
         startGameBtn.classList.remove("hidden");
-        startGameBtn.textContent = "Intentar de nuevo";
+        startGameBtn.textContent = "RETRY";
       }
     }
   }
