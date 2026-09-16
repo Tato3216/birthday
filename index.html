@@ -129,8 +129,9 @@
       </div>
     </section>
 
-    <!-- Pantalla 5 -->
-    <!-- <section class="screen">
+    <!-- Pantalla 5 comentada -->
+    <!--
+    <section class="screen">
       <div class="screen-card beauty-card">
         <p class="label">Lo que me gusta de ti</p>
 
@@ -156,7 +157,8 @@
           ↓
         </button>
       </div>
-    </section> -->
+    </section>
+    -->
 
     <!-- Pantalla 6 -->
     <section class="screen">
@@ -167,7 +169,7 @@
 
         <div class="rules">
           <p>Sonreír más de la cuenta. Aunque seas brava jaja</p>
-          <p>Dejarte consentir obvio solo por mi.</p>
+          <p>Dejarte consentir obvio solo por mí.</p>
           <p>Disfrutar sin culpa.</p>
           <p>Verte demasiado bonita, aunque eso ya lo haces sin esfuerzo.</p>
         </div>
@@ -240,7 +242,40 @@
       </div>
     </section>
 
-    <!-- Pantalla 9 -->
+    <!-- Pantalla 9 - Mini juego -->
+    <section class="screen">
+      <div class="screen-card game-card">
+        <p class="label">Mini reto</p>
+
+        <h2>Atrapa las estrellas</h2>
+
+        <p class="main-text">
+          Toca 10 estrellas antes de continuar. No es tan difícil...
+          aunque contigo nunca se sabe.
+        </p>
+
+        <div class="game-info">
+          <p>Estrellas: <span id="score">0</span>/10</p>
+          <p>Tiempo: <span id="timeLeft">20</span>s</p>
+        </div>
+
+        <div id="gameArea" class="game-area">
+          <p id="gameHint" class="game-hint">Presiona iniciar para jugar</p>
+        </div>
+
+        <button id="startGameBtn" class="secondary-btn" type="button">
+          Iniciar juego
+        </button>
+
+        <p id="gameResult" class="main-text game-result hidden"></p>
+
+        <button id="gameNextBtn" class="arrow-next next-btn hidden" type="button" aria-label="Continuar">
+          ↓
+        </button>
+      </div>
+    </section>
+
+    <!-- Pantalla 10 -->
     <section class="screen">
       <div class="screen-card letter-card">
         <p class="label">Antes de terminar</p>
@@ -272,15 +307,15 @@
             Que nunca te falten razones para sonreír, canciones que te alegren
             el día y personas que te quieran bonito.
           </p>
-          <button class="arrow-next next-btn" type="button" aria-label="Continuar">
-          SIGUIENTE ↓
-        </button>
-        </div>
 
+          <button class="arrow-next next-btn" type="button" aria-label="Continuar">
+            SIGUIENTE ↓
+          </button>
+        </div>
       </div>
     </section>
 
-    <!-- Pantalla 10 -->
+    <!-- Pantalla 11 -->
     <section class="screen">
       <div class="screen-card final-card">
         <p class="label">Para cerrar</p>

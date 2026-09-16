@@ -18,8 +18,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const letterBtn = document.getElementById("letterBtn");
   const letterText = document.getElementById("letterText");
 
+  const startGameBtn = document.getElementById("startGameBtn");
+  const gameArea = document.getElementById("gameArea");
+  const scoreText = document.getElementById("score");
+  const timeLeftText = document.getElementById("timeLeft");
+  const gameResult = document.getElementById("gameResult");
+  const gameHint = document.getElementById("gameHint");
+  const gameNextBtn = document.getElementById("gameNextBtn");
+
   let currentIndex = 0;
   let isPlaying = false;
+
+  let score = 0;
+  let timeLeft = 20;
+  let gameTimer = null;
+  let starTimer = null;
+  let gameRunning = false;
 
   if (bgMusic) {
     bgMusic.volume = 0.9;
@@ -44,6 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (activeCard) {
       activeCard.scrollTop = 0;
+    }
+
+    if (gameRunning && !screens[index].querySelector(".game-card")) {
+      resetGame();
     }
   }
 
@@ -142,6 +160,179 @@ document.addEventListener("DOMContentLoaded", () => {
       letterText.classList.remove("hidden");
       letterBtn.textContent = "Mensaje abierto";
     });
+  }
+
+  function resetGame() {
+    score = 0;
+    timeLeft = 20;
+    gameRunning = false;
+
+    if (scoreText) {
+      scoreText.textContent = score;
+    }
+
+    if (timeLeftText) {
+      timeLeftText.textContent = timeLeft;
+    }
+
+    if (gameResult) {
+      gameResult.classList.add("hidden");
+      gameResult.textContent = "";
+    }
+
+    if (gameNextBtn) {
+      gameNextBtn.classList.add("hidden");
+    }
+
+    clearInterval(gameTimer);
+    clearInterval(starTimer);
+
+    if (gameArea) {
+      gameArea.querySelectorAll(".star-target").forEach((star) => {
+        star.remove();
+      });
+    }
+
+    if (gameHint) {
+      gameHint.classList.remove("hidden");
+      gameHint.textContent = "Presiona iniciar para jugar";
+    }
+
+    if (startGameBtn) {
+      startGameBtn.classList.remove("hidden");
+      startGameBtn.textContent = "Iniciar juego";
+    }
+  }
+
+  function startGame() {
+    if (!gameArea || gameRunning) return;
+
+    resetGame();
+
+    gameRunning = true;
+
+    if (gameHint) {
+      gameHint.classList.add("hidden");
+    }
+
+    if (startGameBtn) {
+      startGameBtn.classList.add("hidden");
+    }
+
+    createStar();
+
+    gameTimer = setInterval(() => {
+      timeLeft--;
+
+      if (timeLeftText) {
+        timeLeftText.textContent = timeLeft;
+      }
+
+      if (timeLeft <= 0) {
+        endGame(false);
+      }
+    }, 1000);
+
+    starTimer = setInterval(() => {
+      createStar();
+    }, 900);
+  }
+
+  function createStar() {
+    if (!gameArea || !gameRunning) return;
+
+    const star = document.createElement("button");
+    star.classList.add("star-target");
+    star.type = "button";
+    star.textContent = "✦";
+
+    const areaWidth = gameArea.clientWidth;
+    const areaHeight = gameArea.clientHeight;
+
+    const maxX = areaWidth - 50;
+    const maxY = areaHeight - 50;
+
+    const randomX = Math.max(8, Math.floor(Math.random() * maxX));
+    const randomY = Math.max(8, Math.floor(Math.random() * maxY));
+
+    star.style.left = `${randomX}px`;
+    star.style.top = `${randomY}px`;
+
+    star.addEventListener("click", () => {
+      if (!gameRunning) return;
+
+      score++;
+
+      if (scoreText) {
+        scoreText.textContent = score;
+      }
+
+      star.remove();
+
+      if (score >= 10) {
+        endGame(true);
+      }
+    });
+
+    gameArea.appendChild(star);
+
+    setTimeout(() => {
+      if (star && star.parentElement) {
+        star.remove();
+      }
+    }, 1300);
+  }
+
+  function endGame(won) {
+    gameRunning = false;
+
+    clearInterval(gameTimer);
+    clearInterval(starTimer);
+
+    if (gameArea) {
+      gameArea.querySelectorAll(".star-target").forEach((star) => {
+        star.remove();
+      });
+    }
+
+    if (gameResult) {
+      gameResult.classList.remove("hidden");
+
+      if (won) {
+        gameResult.textContent = "Ganaste. Ahora sí desbloqueaste el mensaje guardado.";
+      } else {
+        gameResult.textContent = "Se acabó el tiempo. Inténtalo otra vez, señorita.";
+      }
+    }
+
+    if (gameHint) {
+      gameHint.classList.remove("hidden");
+
+      if (won) {
+        gameHint.textContent = "Reto completado ✨";
+      } else {
+        gameHint.textContent = "Casi... vuelve a intentarlo";
+      }
+    }
+
+    if (won) {
+      if (gameNextBtn) {
+        gameNextBtn.classList.remove("hidden");
+      }
+
+      if (startGameBtn) {
+        startGameBtn.classList.add("hidden");
+      }
+    } else {
+      if (startGameBtn) {
+        startGameBtn.classList.remove("hidden");
+        startGameBtn.textContent = "Intentar de nuevo";
+      }
+    }
+  }
+
+  if (startGameBtn) {
+    startGameBtn.addEventListener("click", startGame);
   }
 
   document.addEventListener("keydown", (event) => {
